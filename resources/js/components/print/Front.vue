@@ -75,7 +75,7 @@
                 <tr class="leading-1 border-t-2 border-gray-600">
                     <td colspan="2" class="border-table px-1 py-4">
                         Семейной положение
-                        <span class="inline-block underline px-2">{{ selected.SEM_POL }}</span>
+                        <span class="inline-block underline px-2 text-base font-semibold">{{ selected.SEM_POL }}</span>
                     </td>
                     <td class="border-table px-1 py-0 text-center">26</td>
                     <td class="border-table px-1 py-0"></td>
@@ -95,7 +95,7 @@
                         </div>
                         <div class="pr-2">
                             <span>Дата выдачи: </span>
-                            <span v-if="selected.PASPKOGDA" class="inline-block underline font-bold">{{ selected.PASPKOGDA.replace(/..\B/g, '$&.')}}</span>"
+                            <span v-if="selected.PASPKOGDA" class="inline-block underline font-bold">{{ selected.PASPKOGDA }}</span>
                             <span class="inline-block w-28"></span>
                         </div>
                     </td>
@@ -107,7 +107,7 @@
                         <span>
                             Домашний адрес индекс:
                         </span>
-                        <span class="font-bold contents text-[9px]">{{ selected.ADRES }}</span>
+                        <span class="font-bold contents text-[12px]">{{ selected.ADRES }}</span>
                     </td>
                     <td rowspan="2" class="border-table px-1 py-0 text-center">28</td>
                 </tr>
@@ -185,7 +185,7 @@
                 </tr>
                 <tr class="leading-1">
                     <td colspan="2" class="border-table px-1 pt-2">
-                        Зачислен на работу с <span v-if="selected.DATAPRIEM" class="inline-block underline px-1">{{ selected.DATAPRIEM.replace(/..\B/g, '$&.') }} г.</span>
+                        Зачислен на работу с
                     </td>
                     <td class="border-table px-1 py-0 text-center">38</td>
                     <td class="border-table px-1 py-0"></td>
@@ -241,7 +241,7 @@
                     <td colspan="2" class="border-table px-1 py-0.5">
                         <span class="opacity-0"> a</span><br>
                         Табельный номер
-                        <span class="font-bold">{{ selected.TABN }} </span>
+                        <span class="font-bold text-base">{{ selected.TABN }} </span>
                     </td>
                     <td colspan="1" class="border-table px-1 py-0.5 w-9 text-center">1</td>
                     <td colspan="1" class="border-table px-1 py-0.5 text-center"></td>
@@ -286,8 +286,8 @@
                 <tr class="leading-none">
                     <td colspan="2" class="border-table px-1 py-0.5 h-[39px]">
                         <span class="mr-5 mb-[10px] inline-block">Пол</span>
-                        <span v-if="selected.SEX == 'М'" class="font-bold">Мужской</span>
-                        <span v-else class="font-bold">Женской</span>
+                        <span v-if="selected.SEX == 'М'" class="font-bold">Еркак</span>
+                        <span v-else class="font-bold">Аёл</span>
                     </td>
                     <td colspan="1" class="border-table px-1 py-0.5 w-9 text-center">4</td>
                     <td colspan="1" class="border-table px-1 py-0.5 text-center"></td>
@@ -296,7 +296,7 @@
                     <td colspan="4" class="border-table px-1 py-0.5 h-7">
                         Дата рождения
                         <span class="ml-2 font-bold">
-                            {{ selected.DATAR }}
+                            {{  moment(selected.DATAR).format("DD.MM.YYYY") }}
                         </span>
                     </td>
                     <td colspan="1" class="border-table px-1 py-0.5 w-9 text-center">5</td>
@@ -458,7 +458,7 @@
 </template>
 
 <script setup lang="ts">
-
+import moment from 'moment';
 const { selected } = defineProps(['selected'])
 
 

@@ -20,8 +20,8 @@
                 </tr>
                 <tr>
                     <RecvisitVue></RecvisitVue>
-                    <td class="border-table w-12">Код</td>
-                    <td class="border-table w-40">Наименование</td>
+                    <td class="border-table w-16">Код</td>
+                    <td class="border-table w-36">Наименование</td>
                     <RecvisitVue></RecvisitVue>
                     <td class="border-table w-16">Код</td>
                     <td class="border-table w-[210px]">Наименование</td>
