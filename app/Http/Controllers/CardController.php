@@ -9,9 +9,46 @@ class CardController extends Controller
 {
 
     public function index(){
-        return Card::where('uvol', null)
+        ini_set('memory_limit', '256M');
+        return Card::select(
+            'ID',
+            'TABN',
+            'FIO',
+            'SEX',
+            'DATAR',
+            'MESTOR',
+            'NATION',
+            'VIDOBRAZ',
+            'UCHZAV',
+            'FORMAUCH',
+            'SPECOBR',
+            'POSLMESTO',
+            'SEM_POL',
+            'ADRES',
+            'PASPNOM',
+            'PASPKEM',
+            'STRANA',
+            'PASPKOGDA',
+            'PASPDEYST',
+            'UCHAST_CHS',
+            'V_GRUCHETA',
+            'V_KAT',
+            'V_SOSTAV',
+            'V_ZVANIE',
+            'V_VUSNOM',
+            'V_GODNOST',
+            'V_ODO',
+            'DATAPRIEM',
+            'DATAPRIEM',
+            'PODRAZD',
+            'PROF',
+            'RAZRYAD',
+            'leavetext',
+            'desc_time',
+            'bron',
+        )
+        ->where('uvol', null)
         ->orderby('id', 'desc')
-        ->orderBy('D10', 'desc')
         ->get();
     }
 
