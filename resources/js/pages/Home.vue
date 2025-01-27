@@ -176,22 +176,16 @@ function deleteCard(formData: any){
 
 
 function infoDatar(cellInfo: any){
-    if(cellInfo.value == null ) return ""
+    console.log(cellInfo.value);
+    
+    if(cellInfo.value == null) return ""
 
     if(cellInfo.value.includes('-')) return moment(cellInfo.value, 'YYYY-MM-DD').format("DD.MM.YYYY")
     return moment(cellInfo.value, 'DD-MM-YYYY').format("DD.MM.YYYY")
 }
 
 function brontext(cellInfo: any){
-    if(cellInfo.value == null ||  cellInfo.value == false) return ""
+    if(cellInfo.value == null || cellInfo.value == false) return ""
     else return 'БРОН'
 }
 </script>
-<!-- // function onValueChanged(select: any) {
-    //     const dataGrid = dataGridRef.value.instance
-    //     const value = select.value
-        
-    //     if (value === 'All') dataGrid.clearFilter()
-    //     else dataGrid.filter(['DATAR', 'contains', value])
-    // } -->
-    

@@ -73,7 +73,7 @@
                     <td colspan="4" class="border-table px-1 py-0 h-2"></td>
                 </tr>
                 <tr class="leading-1 border-t-2 border-gray-600">
-                    <td colspan="2" class="border-table px-1 py-4">
+                    <td colspan="2" class="border-table px-1 py-2">
                         Семейной положение
                         <span class="inline-block underline px-2 text-base font-semibold">{{ selected.SEM_POL }}</span>
                     </td>
@@ -172,7 +172,7 @@
                             Отношение к воинскому спец. Учету: <span class="font-bold" v-if="selected.bron == '1'">Брон</span>
                         </span>
                         <div class="font-bold">
-                            {{ selected.V_ODO.substr(0, 50) }}
+                            {{ selected.V_ODO?.substr(0, 50) }}
                         </div>
                     </td>
                     <td class="border-table px-1 py-0 text-center">36</td>
